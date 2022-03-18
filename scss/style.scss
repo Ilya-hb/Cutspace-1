@@ -1,0 +1,192 @@
+$primary-txt-color: #323232;
+$active-color: #f78434;
+
+//1280px - ноутбуки, мониторы
+//480px и меньше - телефоны
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    @media (max-width: 1200px) {
+        max-width: 90%;
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px auto;
+
+    //&-nav = .header-nav
+    &-nav {
+        display: flex;
+        &-link {
+            color: $primary-txt-color;
+            text-decoration: none;
+            margin-left: 42px;
+            &:hover {
+                text-decoration: underline;
+            }
+            @media (max-width: 770px) {
+                display:block;
+                margin: 10px;
+            }
+            &:nth-of-type(1){
+                color: #f78434;
+            }
+        }
+        @media (max-width: 992px) {
+            margin: 10px 20px 0;
+        }
+        @media (max-width: 770px) {
+            flex-direction: column;
+            text-align: center;
+            font-size: 1em;
+
+        }
+    }
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column; 
+        .a-logo{
+            margin-bottom: 15px;
+        }
+    }
+
+}
+.main-heading,
+.text {
+    color: $primary-txt-color;
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+.main-heading {
+    font-size: 54px;
+    margin: 0 0 30px;
+    width: 680px;
+    position: relative;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+.intro-row {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+.intro-column {
+    width: 52%;
+}
+.intro-column:nth-of-type(2) {
+    width: 48%;
+
+    img {
+        max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            max-width: 100%;
+        }
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-column,
+    .intro-column:nth-of-type(2) {
+        width: 100%;
+        text-align: center;
+    }
+}
+.intro-form {
+    position: relative;
+    width: 460px; // non-adaptive
+    margin-top: 40px;
+
+    .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    @media (max-width: 768px){
+        width: 100%;
+        .btn{
+            position: relative;
+            margin-top: 30px;
+            left: 50%;
+            transform: translate(-50%, 0);  
+        }
+    }
+
+    &:before {
+        content: "";
+        background-image: url("../images/email-icon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 18px;
+        display: inline-block;
+        position: absolute;
+        background-size: contain;
+        left: 28px;
+        top: 21px;
+    }
+}
+
+.intro-input-email {
+    box-shadow: 0px 17px 42px rgba(0, 0, 0, 0.12);
+    border-radius: 50px;
+    border: none;
+    padding: 17px 200px 17px 72px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    &::placeholder {
+        color: #bbbbbb;
+        
+    }
+    @media (max-width: 768px){
+        padding:17px 23px 17px 72px;
+
+    }
+}
+
+.btn {
+    display: block;
+    padding: 17px 37px 17px 37px;
+    background-color: $active-color;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
